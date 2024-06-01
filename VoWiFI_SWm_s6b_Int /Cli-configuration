@@ -1,0 +1,117 @@
+
+--> cd /r/clients/epDG
+
+[ //localhost/Radius/Clients/ePDG ]
+    Name = ePDG
+    Description = 
+    Protocol = diameter
+    HostName = mscp02.mgmt01.epc.mnc004.mcc602.3gppnetwork.org
+    PeerPort = 3868
+    Vendor = 
+    IncomingScript~ = epdg-in
+    OutgoingScript~ = vendorresponseswm
+    AdvertisedHostName = 
+    AdvertisedRealm = epc.mnc004.mcc602.3gppnetwork.org
+    InitialTimeout = 1000
+    MaxIncomingRequestRate = 0
+    SCTP-Enabled = FALSE
+    TLS-Enabled = false
+
+--> 
+
+--> cd /r/clients/epDGsb/
+
+[ //localhost/Radius/Clients/ePDGSb ]
+    Name = ePDGSb
+    Description = 
+    Protocol = diameter
+    HostName = mscp01.mgmt01.epc.mnc004.mcc602.3gppnetwork.org
+    PeerPort = 3868
+    Vendor = 
+    IncomingScript~ = Vendor
+    OutgoingScript~ = vendorresponse
+    AdvertisedHostName = 
+    AdvertisedRealm = epc.mnc004.mcc602.3gppnetwork.org
+    InitialTimeout = 1000
+    MaxIncomingRequestRate = 0
+    SCTP-Enabled = FALSE
+    TLS-Enabled = FALSE
+
+--> 
+
+
+--> 
+
+
+--> cd /r/scripts/vendorresponse
+
+[ //localhost/Radius/Scripts/vendorresponse ]
+    Name = vendorresponse
+    Description = 
+    Language = tcl
+    Filename = vendor.tcl
+    EntryPoint = vendorresponse
+    InitEntryPoint = 
+    InitEntryPointArgs = 
+
+--> 
+
+
+--> cd /r/scripts/vendorresponseswm/
+
+[ //localhost/Radius/Scripts/vendorresponseswm ]
+    Name = vendorresponseswm
+    Description = 
+    Language = tcl
+    Filename = vendor.tcl
+    EntryPoint = vendorresponseswm
+    InitEntryPoint = 
+    InitEntryPointArgs = 
+
+--> 
+
+
+--> ls -R /r/advanced/diameter
+
+[ /Radius/Advanced/Diameter ]
+    IsDiameterEnabled = TRUE
+    General/
+        Product = CPAR
+        Version = 7.0
+        AuthApplicationIdList = 16777264:16777272
+        AcctApplicationIdList = 
+    TransportManagement/
+        Identity = cpar7.aaa.epc.mnc004.mcc602.3gppnetwork.org
+        Realm = epc.mnc004.mcc602.3gppnetwork.org
+        WatchdogTimeout = 500
+        ValidateIncomingMessages = FALSE
+        ValidateOutgoingMessages = TRUE
+        MaximumNumberofDiameterPackets = 8194
+        ReserveDiameterPacketPool = 0
+        DiameterPacketSize = 2048
+        AdvertisedHostName/
+            1. cpar7.aaa.epc.mnc004.mcc602.3gppnetwork.org
+        SCTPOptions/
+            MaxInitRetry = 3
+            MaxInboundStream = 4
+            MaxOutboundstream = 5
+            EnableHeartbeat = FALSE
+            HeartbeatInterval = 500
+
+--> exit
+
+
+Logging out of localhost...
+[root@cpar7 bin]# cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.100.150.13 cpar7.aaa.epc.mnc004.mcc602.3gppnetwork.org
+10.10.10.20 hss.epc.mnc004.mcc602.3gppnetwork.org
+10.10.10.30 epdg.3gppnetwork.org
+10.100.150.14 epdg01.oct2.epc.mnc004.mcc602.3gppnetwork.org
+#swm 
+172.20.10.57  mscp02.mgmt01.epc.mnc004.mcc602.3gppnetwork.org 
+ #s6b
+172.20.10.58 mscp01.mgmt01.epc.mnc004.mcc602.3gppnetwork.org
+#10.10.66.83 cpar7.aaa.epc.mnc004.mcc602.3gppnetwork.org
+[root@cpar7 bin]# 
