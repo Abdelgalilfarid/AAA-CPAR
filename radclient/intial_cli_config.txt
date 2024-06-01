@@ -1,0 +1,421 @@
+--> cd /r/Advanced/
+
+[ //localhost/Radius/Advanced ]
+    LogServerActivity = FALSE
+    TLSv1Enabled = TRUE
+    MaximumNumberOfRadiusPackets = 8192
+    UDPPacketSize = 4096
+    NumberOfRemoteUDPServerSockets = 4
+    NumberOfRadiusIdentifiersPerSocket = 256
+    PerPacketHeapSize = 6500
+    RequireNASsBehindProxyBeInClientList = FALSE
+    AAAFileServiceSyncInterval = 75
+    SessionBackingStoreSyncInterval = 100
+    BackingStoreDiscThreshold = "5 Gigabyte"
+    SessionBackingStorePruneInterval = "6 Hours"
+    PacketBackingStorePruneInterval = "6 Hours"
+    RemoteLDAPServerThreadTimerInterval = 10
+    RemoteSigtranServerThreadTimerInterval = 10
+    InitialBackgroundTimerSleepTime = 5
+    MinimumSocketBufferSize = 65536
+    CertificateDBPath = 
+    LogFileSize = "1 Megabyte"
+    LogFileCount = 2
+    TraceFileSize = "1 Gigabyte"
+    TraceFileCount = 2
+    MemoryLimitForRadiusProcess = "3584 Megabyte"
+    UseAdvancedDuplicateDetection = FALSE
+    AdvancedDuplicateDetectionMemoryInterval = 10000
+    DetectOutOfOrderAccountingPackets = FALSE
+    DefaultReturnedSubnetSizeIfNoMatch = BIGGER
+    ClasspathForJavaExtensions = 
+    JavaVMOptions = 
+    MaximumODBCResultSize = 256
+    ARIsCaseInsensitive = TRUE
+    RemoteRadiusServerInterface = 
+    ODBCEnvironmentMultiValueDelimiter = 
+    PacketBackingStoreSyncInterval = 75
+    ListenForDynamicAuthorizationRequests = FALSE
+    MaximumNumberOfXMLPackets = 1024
+    XMLUDPPacketSize = 4096
+    RollingEncryptionKeyChangePeriod = "1 week"
+    SessionPurgeInterval = 
+    EapBadMessagePolicy = SilentDiscard
+    StaleSessionTimeout = "1 Hour"
+    MaximumOutstandingRequests = 0
+    MaximumIncomingRequestRate = 0
+    HideSharedSecretAndPrivateKeys = False
+    DefaultRadiusSharedSecret = 
+    LogTPSActivity = TRUE
+    TPSLogFileCount = 15
+    TPSLogFilenamePrefix = tps
+    TPSSamplingPeriodInSecs = 15
+    LogSessionActivity = TRUE
+    EnableLengthFlag = FALSE
+    SessionLogFileCount = 15
+    SessionLogFilenamePrefix = sm
+    SessionSamplingPeriodInSecs = 30
+    FlushDiskInBackground = FALSE
+    AdditionalNativeOracleErrors = 
+    SendOpCodeInISDResponse = FALSE
+    EnableRoutingContextInM3UA = FALSE
+    EnableStickySessionCount = TRUE
+    EnableSIGTRANStackLogs = TRUE
+    SIGTRANStackLogFileSize = "100 Megabyte"
+    SIGTRANLogFileCount = 10
+    StickySessionCountInterval = 60000
+    StickySessionSyncInterval = 500
+    ReserveRADIUSPacketPool = 0
+    Ports/
+    Interfaces/
+    ReplyMessages/
+    Attribute Dictionary/
+    SNMP/
+    RemoteSessionServer/
+    RFCCompliance/
+    DDNS/
+    ODBCDataSources/
+    AttributeGroups/
+    KeyStores/
+    Diameter/
+    DiameterDictionary/
+
+--> set LogServerActivity TRUE
+
+Set LogServerActivity TRUE
+
+--> set LogFileSize  "100 Megabyte"
+
+Set LogFileSize "100 Megabyte"
+
+--> set LogFileCount 5
+
+Set LogFileCount 5
+
+
+--> save 
+
+Validating //localhost...
+Saving //localhost...
+The following warnings were found:
+    /Administrators/admin/Password: Should be a combination of capital letters,small letters and numerics
+
+
+--> exit
+
+
+Logging out of localhost...
+[root@localhost bin]# 
+[root@localhost bin]# 
+[root@localhost bin]# pwd
+/cisco-ar/bin
+[root@localhost bin]# 
+[root@localhost bin]# 
+[root@localhost bin]# cd ../logs/
+[root@localhost logs]# 
+[root@localhost logs]# ll
+total 120
+-rw-r--r-- 1 root root     0 Sep  4 22:40 accounting.log
+-rw-rw-r-- 1 root root     0 Sep  4 22:40 AcctInfo_log
+-rw-rw-r-- 1 root root  8807 Sep  5 08:41 agent_server_1_log
+-rw-rw-r-- 1 root adm  18627 Sep  5 08:41 aregcmd_log
+-rw-r--r-- 1 root root  1100 Sep  5 00:58 ar-status
+-rw-rw-r-- 1 root root  5194 Sep  5 08:41 config_mcd_1_log
+-rw-rw-r-- 1 root root 22194 Sep  5 06:58 name_radius_1_log
+-rw-rw-r-- 1 root root     0 May 22  2015 name_radius_1_trace
+-rw-r--r-- 1 root root   744 May 22  2015 sm-05-22-2015.csv
+-rw-r--r-- 1 root root  3768 Sep  5 00:02 sm-09-04-2018.csv
+-rw-r--r-- 1 root root 24912 Sep  5 08:38 sm-09-05-2018.csv
+-rw-r--r-- 1 root root   192 May 22  2015 tps-05-22-2015.csv
+-rw-r--r-- 1 root root   768 Sep  4 23:59 tps-09-04-2018.csv
+-rw-r--r-- 1 root root  5016 Sep  5 08:40 tps-09-05-2018.csv
+[root@localhost logs]# cat tps-09-05-2018.csv 
+09-05-2018, 3:23:18,0,0
+09-05-2018, 3:25:48,0,0
+09-05-2018, 3:28:18,0,0
+09-05-2018, 3:30:48,0,0
+09-05-2018, 3:33:18,0,0
+09-05-2018, 3:35:48,0,0
+09-05-2018, 3:38:18,0,0
+09-05-2018, 3:40:48,0,0
+09-05-2018, 3:43:18,0,0
+09-05-2018, 3:45:48,0,0
+09-05-2018, 3:48:18,0,0
+09-05-2018, 3:50:48,0,0
+09-05-2018, 3:53:18,0,0
+09-05-2018, 3:55:48,0,0
+09-05-2018, 3:58:18,0,0
+09-05-2018, 4:00:48,0,0
+09-05-2018, 4:03:18,0,0
+09-05-2018, 4:05:48,0,0
+09-05-2018, 4:08:18,0,0
+09-05-2018, 4:10:48,0,0
+09-05-2018, 4:13:18,0,0
+09-05-2018, 4:15:48,0,0
+09-05-2018, 4:18:18,0,0
+09-05-2018, 4:20:48,0,0
+09-05-2018, 4:23:18,0,0
+09-05-2018, 4:25:48,0,0
+09-05-2018, 4:28:18,0,0
+09-05-2018, 4:30:48,0,0
+09-05-2018, 4:33:18,0,0
+09-05-2018, 4:35:48,0,0
+09-05-2018, 4:38:18,0,0
+09-05-2018, 4:40:48,0,0
+09-05-2018, 4:43:18,0,0
+09-05-2018, 4:45:48,0,0
+09-05-2018, 4:48:18,0,0
+09-05-2018, 4:50:48,0,0
+09-05-2018, 4:53:18,0,0
+ 
+09-05-2018, 8:35:48,0,0
+09-05-2018, 8:38:18,0,0
+09-05-2018, 8:40:48,0,0
+[root@localhost logs]# 
+[root@localhost logs]# 
+[root@localhost logs]# 
+[root@localhost logs]# 
+[root@localhost logs]# 
+[root@localhost logs]# 
+[root@localhost logs]# 
+[root@localhost logs]# cd ../bin/
+[root@localhost bin]# 
+[root@localhost bin]# ./aregcmd -s
+Cisco Prime Access Registrar 7.0.0 Configuration Utility
+Copyright (C) 1995-2015 by Cisco Systems, Inc.  All rights reserved.
+Logging in to localhost
+
+[ //localhost ]
+    LicenseInfo = PAR-SIG-NG-TPS 7.0(100TPS:expires on 27-Nov-2018)
+    Radius/
+    Administrators/
+
+Server 'Radius' is Running, its health is 10 out of 10
+
+--> 
+
+
+--> cd /r/profiles/
+
+[ //localhost/Radius/Profiles ]
+    Entries 1 to 4 from 4 total entries
+    Current filter: <all>
+
+    default-diameter-users/
+    default-PPP-users/
+    default-SLIP-users/
+    default-Telnet-users/
+
+--> ls default-PPP-users
+
+[ default-PPP-users ]
+    Name = default-PPP-users
+    Description = 
+    Attributes/
+
+--> ls -R default-PPP-users
+
+[ default-PPP-users ]
+    Name = default-PPP-users
+    Description = 
+    Attributes/
+        Ascend-Idle-Limit = 1800
+        Framed-Compression = "VJ TCP/IP header compression"
+        Framed-MTU = 1500
+        Framed-Protocol = PPP
+        Framed-Routing = None
+        Service-Type = Framed
+
+--> 
+
+
+--> pwd
+
+[ //localhost/Radius/Profiles ]
+
+--> add TEST_SERVICE
+
+Added TEST_SERVICE
+
+--> cd TEST_SERVICE/
+
+[ //localhost/Radius/Profiles/TEST_SERVICE ]
+    Name = TEST_SERVICE
+    Description = 
+    Attributes/
+
+--> cd Attributes/
+
+[ //localhost/Radius/Profiles/TEST_SERVICE/Attributes ]
+
+--> set 'Cisco-AVPair = ip:vrf-id=TEST_NAT_VPN'
+
+310 Command failed
+Property Cisco-AVPair = ip:vrf-id=TEST_NAT_VPN not found
+
+--> set  1 'Cisco-AVPair = ip:vrf-id=TEST_NAT_VPN'
+
+Set 1  "Cisco-AVPair = ip:vrf-id=TEST_NAT_VPN"
+
+--> ls
+
+[ //localhost/Radius/Profiles/TEST_SERVICE/Attributes ]
+    1 = "Cisco-AVPair = ip:vrf-id=TEST_NAT_VPN"
+
+--> set Cisco-AVPair  "ip:vrf-id=TEST_NAT_VPN"
+
+Set Cisco-AVPair  ip:vrf-id=TEST_NAT_VPN
+
+--> ls
+
+[ //localhost/Radius/Profiles/TEST_SERVICE/Attributes ]
+    1 = "Cisco-AVPair = ip:vrf-id=TEST_NAT_VPN"
+    Cisco-AVPair = ip:vrf-id=TEST_NAT_VPN
+
+--> cd /r/rules/
+
+[ //localhost/Radius/Rules ]
+    Entries 0 to 0 from 0 total entries
+    Current filter: <all>
+
+
+--> add 1
+
+Added 1
+
+--> cd 1/
+
+[ //localhost/Radius/Rules/1 ]
+    Name = 1
+    Description = 
+    Type = 
+    Script~ = 
+    Attributes/
+
+--> cd ../..
+
+[ //localhost/Radius ]
+    Name = Radius
+    Description = 
+    Version = 7.0.0
+    IncomingScript~ = 
+    OutgoingScript~ = 
+    DefaultAuthenticationService~ = ldap
+    DefaultAuthorizationService~ = ldap
+    DefaultAccountingService~ = local-file
+    DefaultSessionService~ = 
+    DefaultSessionManager~ = session-mgr-1
+    UserLists/
+    UserGroups/
+    Policies/
+    Clients/
+    Vendors/
+    Scripts/
+    Services/
+    SessionManagers/
+    ResourceManagers/
+    Profiles/
+    Rules/
+    Translations/
+    TranslationGroups/
+    RemoteServers/
+    CommandSets/
+    DeviceAccessRules/
+    FastRules/
+    Advanced/
+    Replication/
+
+--> cd fastRules/
+
+[ //localhost/Radius/FastRules ]
+    RuleDefinitions/
+    Order/
+
+--> cd RuleDefinitions/
+
+[ //localhost/Radius/FastRules/RuleDefinitions ]
+    Entries 0 to 0 from 0 total entries
+    Current filter: <all>
+
+
+--> add 1
+
+Added 1
+
+--> cd 1/
+
+[ //localhost/Radius/FastRules/RuleDefinitions/1 ]
+    Name = 1
+    Description = 
+    Protocol = 
+    Condition = 
+    Success = 
+    Failure = 
+    Attributes/
+
+--> set protocol radius 
+
+Set Protocol radius
+
+--> ls
+
+[ //localhost/Radius/FastRules/RuleDefinitions/1 ]
+    Name = 1
+    Description = 
+    Protocol = radius
+    Condition = 
+    Success = 
+    Failure = 
+    Attributes/
+
+--> cd ../../
+Order/            RuleDefinitions/  
+--> cd ../../
+Order/            RuleDefinitions/  
+--> cd ../../Order/
+
+[ //localhost/Radius/FastRules/Order ]
+    Radius/
+    Diameter/
+    Tacacs/
+
+--> cd Radius/
+
+[ //localhost/Radius/FastRules/Order/Radius ]
+
+--> set 1
+
+304 Too few arguments
+
+--> set 1 xyz
+
+Set 1 xyz
+
+--> ls
+
+[ //localhost/Radius/FastRules/Order/Radius ]
+    1. xyz
+
+--> set 2 sye
+
+Set 2 sye
+
+--> ls
+
+[ //localhost/Radius/FastRules/Order/Radius ]
+    1. xyz
+    2. sye
+
+--> 
+
+
+--> 
+
+
+--> exit
+
+Cluster configuration has been modified.
+Save before logging out? [yes|no|cancel]: no
+
+Logging out of localhost...
+[root@localhost bin]# 

@@ -1,0 +1,112 @@
+[root@localhost bin]# vi /etc/resolv.conf
+nameserver 8.8.8.8
+~
+~
+~
+~
+~
+~
+~
+~
+~
+"/etc/resolv.conf" 1L, 19C written
+[root@localhost bin]# 
+[root@localhost bin]# netstat -an | grep 1812
+udp        0      0 41.234.66.22:1812           0.0.0.0:*                               
+udp        0      0 127.0.0.1:1812              0.0.0.0:*                               
+udp        0      0 ::1:1812                    :::*                                    
+[root@localhost bin]# netstat -an | grep 1813
+udp        0      0 41.234.66.22:1813           0.0.0.0:*                               
+udp        0      0 127.0.0.1:1813              0.0.0.0:*                               
+udp        0      0 ::1:1813                    :::*                                    
+[root@localhost bin]# 
+[root@localhost bin]# python
+Python 2.6.6 (r266:84292, Nov 22 2013, 12:16:22) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-4)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> 
+>>> 
+>>> 
+>>> exit()
+[root@localhost bin]# 
+[root@localhost bin]# 
+[root@localhost bin]# yum install freeradius-utils
+Loaded plugins: fastestmirror, security
+Loading mirror speeds from cached hostfile
+ * base: mirror.crazynetwork.it
+ * extras: mirror.crazynetwork.it
+ * updates: mirror.crazynetwork.it
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package freeradius-utils.x86_64 0:2.2.6-7.el6_9 will be installed
+--> Processing Dependency: perl(DBI) for package: freeradius-utils-2.2.6-7.el6_9.x86_64
+--> Running transaction check
+---> Package perl-DBI.x86_64 0:1.609-4.el6 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+==========================================================================================================================================================================================================
+ Package                                                Arch                                         Version                                             Repository                                  Size
+==========================================================================================================================================================================================================
+Installing:
+ freeradius-utils                                       x86_64                                       2.2.6-7.el6_9                                       base                                       128 k
+Installing for dependencies:
+ perl-DBI                                               x86_64                                       1.609-4.el6                                         base                                       705 k
+
+Transaction Summary
+==========================================================================================================================================================================================================
+Install       2 Package(s)
+
+Total download size: 833 k
+Installed size: 1.9 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/2): freeradius-utils-2.2.6-7.el6_9.x86_64.rpm                                                                                                                                   | 128 kB     00:00     
+(2/2): perl-DBI-1.609-4.el6.x86_64.rpm                                                                                                                                             | 705 kB     00:00     
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                     140 kB/s | 833 kB     00:05     
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : perl-DBI-1.609-4.el6.x86_64                                                                                                                                                            1/2 
+  Installing : freeradius-utils-2.2.6-7.el6_9.x86_64                                                                                                                                                  2/2 
+  Verifying  : freeradius-utils-2.2.6-7.el6_9.x86_64                                                                                                                                                  1/2 
+  Verifying  : perl-DBI-1.609-4.el6.x86_64                                                                                                                                                            2/2 
+
+Installed:
+  freeradius-utils.x86_64 0:2.2.6-7.el6_9                                                                                                                                                                 
+
+Dependency Installed:
+  perl-DBI.x86_64 0:1.609-4.el6                                                                                                                                                                           
+
+Complete!
+[root@localhost bin]# 
+[root@localhost bin]# 
+[root@localhost bin]# 
+[root@localhost bin]# 
+[root@localhost bin]# /usr/bin/radclient
+Usage: radclient [options] server[:port] <command> [<secret>]
+  <command>    One of auth, acct, status, coa, or disconnect.
+  -c count    Send each packet 'count' times.
+  -d raddb    Set dictionary directory.
+  -f file     Read packets from file, not stdin.
+  -F          Print the file name, packet number and reply code.
+  -h          Print usage help information.
+  -i id       Set request id to 'id'.  Values may be 0..255
+  -n num      Send N requests/s
+  -p num      Send 'num' packets from a file in parallel.
+  -q          Do not print anything out.
+  -r retries  If timeout, retry sending the packet 'retries' times.
+  -s          Print out summary information of auth results.
+  -S file     read secret from file, not command line.
+  -t timeout  Wait 'timeout' seconds before retrying (may be a floating point number).
+  -v          Show program version information.
+  -x          Debugging mode.
+  -4          Use IPv4 address of server
+  -6          Use IPv6 address of server.
+[root@localhost bin]# 
