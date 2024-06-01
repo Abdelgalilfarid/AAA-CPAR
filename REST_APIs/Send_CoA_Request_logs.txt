@@ -1,0 +1,35 @@
+This is how I'm sending the CoA request, derived from the example in the user guide:
+
+$ curl http://localhost:8080/RESTAPI/service/CoA" target="_blank">http://localhost:8080/RESTAPI/service/CoA -H "Content-Type: application/json" -H "username:admin" -H "password:redacted" --data '{"parameter":"Class","type":"with-attribute","value":"3008466"}'
+
+Here's the trace log as I send the CoA request.  We're trying to clear the Forward-Policy and HTTP-Redirect-URL fields.  The NAS CoA-NAKs because all the attributes we're passing have the same value as what the NAS currently holds.
+
+03/06/2017 12:43:50.363: P11676: Sending change of authorization request to Client lab-se (10.10.10.62):3799
+03/06/2017 12:43:50.363: P11676: Trace of CoA-Request packet
+03/06/2017 12:43:50.363: P11676:    identifier = 0
+03/06/2017 12:43:50.363: P11676:    length = 200
+03/06/2017 12:43:50.363: P11676:    reqauth = b2:44:86:d2:74:7f:a1:8b:6b:dd:4f
+03/06/2017 12:43:50.363: P11676:    User-Name = r3008466@1mm.customer.com
+03/06/2017 12:43:50.363: P11676:    Filter-Id = in:MailProtector
+03/06/2017 12:43:50.363: P11676:    NAS-Identifier = HQ-Bottom-SE
+03/06/2017 12:43:50.363: P11676:    Acct-Session-Id = FF16001968000003-58B9D1CB
+03/06/2017 12:43:50.363: P11676:    Qos-Metering-Profile-Name = GD7000
+03/06/2017 12:43:50.363: P11676:    Forward-Policy = in:usagethreshold
+03/06/2017 12:43:50.363: P11676:    HTTP-Redirect-URL = https://usagethreshold.customer.com/cp.php" target="_blank">https://usagethreshold.customer.com/cp.php
+03/06/2017 12:43:50.363: P11676:    Context-Name = DSL
+03/06/2017 12:43:50.363: P11676: Sending proxy packet to lab-se (10.10.10.62):3799 with timeout 5000ms
+03/06/2017 12:43:50.368: P11677: Packet received from 10.10.10.62
+03/06/2017 12:43:50.368: P11677: Packet successfully added
+03/06/2017 12:43:50.368: P11677: Trace of CoA-NAK packet
+03/06/2017 12:43:50.368: P11677:    identifier = 0
+03/06/2017 12:43:50.368: P11677:    length = 32
+03/06/2017 12:43:50.368: P11677:    reqauth = 52:53:7b:77:17:a3:86:55:cf:86:d2
+03/06/2017 12:43:50.368: P11677:    Event-Timestamp = 1488822230
+03/06/2017 12:43:50.368: P11677:    Error-Cause = 0
+03/06/2017 12:43:50.368: P11677: Processing response from lab-se (10.10.10.62) to proxy request P11676
+03/06/2017 12:43:50.368: P11678: Packet Deleted
+03/06/2017 12:43:50.370: Log: Received COA-NAK for the COARequest packet sent to lab-se (10.10.10.62):3799 for user r3008466@1mm.customer.com 
+03/06/2017 12:43:50.370: P11677: Packet successfully removed
+03/06/2017 12:43:50.370: P11677: Packet Deleted
+03/06/2017 12:43:50.370: P11676: Packet Deleted
+

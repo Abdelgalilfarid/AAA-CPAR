@@ -1,0 +1,69 @@
+Add User:
+  Method:
+    POST
+  URL:
+    http://172.27.27.10:8080/RESTAPI/service/adduser?UserListName=Default
+  Header:
+    Content-Type = application/json
+    username = admin
+    password = aicuser
+  Body:
+    {"User":{"Name":"user1@ftth","Password":"password","Enabled":"TRUE","Group":"FTTH-Users","AllowNullPassword":"FALSE","UserDefined1":"00123456789"}}
+#------------------------------------------------------------------------------------------------------------------------
+Modify Password:
+  Method:
+    PUT
+  URL:
+    http://172.27.27.10:8080/RESTAPI/service/edituser?name=user1@ftth&UserListName=Default
+  Header:
+    Content-Type = application/json
+    username = admin
+    password = aicuser
+  Body:
+    {"Password":"NewPassword"}
+#------------------------------------------------------------------------------------------------------------------------
+Modify User:
+  Method:
+    PUT
+  URL:
+  http://172.27.27.10:8080/RESTAPI/service/edituser?name=user1@ftth&UserListName=Default
+  Header:
+    Content-Type = application/json
+    username = admin
+    password = aicuser
+  Body:
+    {"Name":"user1@ftth","Password":"password","Enabled":"TRUE","Group":"FTTH-Users","AllowNullPassword":"FALSE","UserDefined1":"00123456789"}
+#------------------------------------------------------------------------------------------------------------------------
+Set User IP Address:
+  Method:
+    PUT
+  URL:
+    http://172.27.27.10:8080/RESTAPI/service/edituser?name=user1@ftth&UserListName=Default
+  Header:
+    Content-Type = application/json
+    username = admin
+    password = aicuser
+  Body:
+    {"Attributes":{"Framed-IP-Address":"2.2.2.2"}}
+#------------------------------------------------------------------------------------------------------------------------
+Terminate User:
+  Method:
+    DELETE
+  URL:
+    http://172.27.27.10:8080//RESTAPI/service/deleteuser?name=user1@ftth&UserListName=Default
+  Header:
+    Content-Type = application/json
+    username = admin
+    password = aicuser
+#------------------------------------------------------------------------------------------------------------------------
+Reset User Connection:
+  Method:
+    POST
+  URL:
+    http://172.27.27.10:8080/RESTAPI/service/CoA
+  Header:
+    Content-Type = application/json
+    username = admin
+    password = aicuser
+  Body:
+    {"parameter":"u-test@umax","value":"","type":"with-user"}
