@@ -1,0 +1,58 @@
+simple 1@customer.net.eg 19831116
+simple 2@customer.net.eg 19831116
+simple 8@customer.net.eg 19831116
+simple 9@customer.net.eg 19831116
+simple 5@customer.net.eg 19831116
+simple 1234567@customer.net.eg 19831116
+simple 166842@customer.net.eg 19831116
+
+
+--> attrib Service-Type Framed
+a007
+--> 
+
+--> p001 set attribusage: p001 set <thing> <value>
+--> p003 set attrib a007
+
+--> p001
+Packet: code = Access-Request, id = 100, length = 61, attributes =
+        User-Name = user
+        User-Password = 1
+        NAS-Identifier = localhost
+        NAS-Port = 1
+        Service-Type = Framed
+
+
+
+
+
+--> simple user 1234
+p001
+--> 
+
+attrib  NAS-Port-Id  "0/1/0/41"
+
+
+--> attrib Service-Type Dialout-Framed-User
+a005
+--> 
+
+--> p003 set attrib a00f
+invalid command name "p003"
+--> 
+
+--> p001 set attrib a005
+
+--> p001
+Packet: code = Access-Request, id = 0, length = 0, attributes =
+        User-Name = user
+        User-Password = 1234
+        NAS-Identifier = localhost
+        NAS-Port = 1
+        Service-Type = Dialout-Framed-User
+
+--> 
+
+simple user cisco123
+attrib Service-Type Outbound
+p001 set attrib a005
